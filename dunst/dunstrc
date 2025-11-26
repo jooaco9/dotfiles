@@ -1,0 +1,48 @@
+[global]
+    # --- CONFIGURACIÓN VISUAL ---
+    font = JetBrainsMono Nerd Font 10
+    
+    # Tamaño y posición (arriba a la derecha con margen)
+    width = 300
+    height = 100
+    origin = top-right
+    offset = 20x20
+    
+    # Bordes y esquinas
+    frame_width = 2
+    frame_color = "#89B4FA"
+    corner_radius = 10
+    
+    # Espaciado interno
+    padding = 12
+    horizontal_padding = 12
+    text_icon_padding = 10
+    
+    # Iconos
+    icon_position = left
+    max_icon_size = 48
+    
+    # Comportamiento
+    mouse_left_click = close_current
+    mouse_right_click = close_all
+    
+    # Formato del texto (<b>Título</b> \n Cuerpo)
+    markup = full
+    format = "<b>%s</b>\n%b"
+
+[urgency_low]
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    timeout = 4
+
+[urgency_normal]
+    background = "#1E1E2E"
+    foreground = "#CDD6F4"
+    timeout = 6
+
+[urgency_critical]
+    # Las críticas (batería baja, errores) salen en rojo
+    background = "#1E1E2E"
+    foreground = "#F38BA8"
+    frame_color = "#F38BA8"
+    timeout = 0
