@@ -1,107 +1,73 @@
 * {
-    /* `otf-font-awesome` and SpaceMono Nerd Font are required to be installed for icons */
-    font-family: "Fira Sans Semibold", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 15px;
-    transition: background-color .3s ease-out;
+    font-family: "JetBrainsMono Nerd Font", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
 }
 
+/* La barra principal es transparente */
 window#waybar {
-    background: rgba(26, 27, 38, 0.75);
-    color: #c0caf5;
-    font-family: 
-        SpaceMono Nerd Font,
-        feather;
-    transition: background-color .5s;
+    background-color: transparent;
 }
 
-.modules-left,
-.modules-center,
-.modules-right
-{
-    background: rgba(0, 0, 8, .7);
-    margin: 5px 5px;
-    padding: 0 5px;
-    border-radius: 15px;
-}
-.modules-left {
+/* Quitamos el fondo a los contenedores (izquierda, centro, derecha) */
+.modules-left, .modules-center, .modules-right {
+    background: transparent;
     padding: 0;
-}
-.modules-center {
-    padding: 0 10px;
+    margin: 0;
 }
 
+/* ESTILO DE LAS PASTILLAS (Módulos individuales) */
+#custom-arch,
+#workspaces,
+#window,
 #clock,
 #battery,
 #cpu,
 #memory,
-#disk,
 #temperature,
-#backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
 #idle_inhibitor,
-#scratchpad,
-#power-profiles-daemon,
-#language,
-#mpd {
-    padding: 0 5px;
-    border-radius: 15px;
+#tray {
+    background-color: #0a0a0a;/* Fondo NEGRO (Casi negro, estilo Tokyo Night) */
+    color: #ffffff;            /* Texto BLANCO */
+	opacity: 1;
+    padding: 5px 15px;         /* Espacio dentro de la pastilla */
+    margin-top: 5px;           /* Margen arriba */
+    margin-bottom: 5px;        /* Margen abajo */
+    margin-left: 4px;          /* Separación entre pastillas */
+    margin-right: 4px;
+    border-radius: 20px;       /* Bordes MUY redondos */
+    border: 1px solid #0a0a0a; /* Borde del mismo color */
 }
 
-#clock:hover,
-#battery:hover,
-#cpu:hover,
-#memory:hover,
-#disk:hover,
-#temperature:hover,
-#backlight:hover,
-#network:hover,
-#pulseaudio:hover,
-#wireplumber:hover,
-#custom-media:hover,
-#tray:hover,
-#mode:hover,
-#idle_inhibitor:hover,
-#scratchpad:hover,
-#power-profiles-daemon:hover,
-#language:hover,
-#mpd:hover {
-    background: rgba(26, 27, 38, 0.9);
-}
+/* Ajustes específicos */
 
-
-#workspaces button {
-  background: transparent;
-  font-family:
-    SpaceMono Nerd Font,
-    feather;
-  font-weight: 900;
-  font-size: 13pt;
-  color: #c0caf5;
-  border:none;
-  border-radius: 15px;
-}
-
-#workspaces button.active {
-    background: #313134; 
-}
-
-#workspaces button:hover {
-  background: #11111b;
-  color: #cdd6f4;
-  box-shadow: none;
-}
-
+/* Icono de Arch (Izquierda) - Un poco más grande o de color */
 #custom-arch {
-    margin-left: 5px;
-    padding: 0 10px;
-    font-size: 25px;
-    transition: color .5s;
+    font-size: 18px;
+    color: #ffffff; /* Un toque azul o blanco si prefieres */
+    padding-left: 15px;
+    padding-right: 20px; /* Un poco mas de aire */
 }
-#custom-arch:hover {
-    color: #1793d1;
+
+/* Workspaces (Escritorios) */
+#workspaces button {
+    padding: 0 5px;
+    color: #6c7086; /* Color inactivo */
+}
+#workspaces button.active {
+    color: #ffffff; /* Color activo (blanco) */
+}
+#workspaces button:hover {
+    background: rgba(0,0,0,0.2);
+}
+
+/* Batería y estados críticos */
+#battery.charging, #battery.plugged {
+    color: #a6e3a1; /* Verde cuando carga */
+}
+#battery.critical:not(.charging) {
+    background-color: #f38ba8; /* Rojo si es crítica */
+    color: #11111b;
 }
