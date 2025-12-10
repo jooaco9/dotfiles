@@ -1,0 +1,57 @@
+/* --- ESTILO PASTILLA (Horizontal) --- */
+
+* {
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-weight: bold;
+    font-size: 24px; /* Iconos grandes */
+}
+
+/* La ventana principal: La "Pastilla" */
+window {
+    background-color: #1a1b26 !important; /* Fondo Tokyo Night oscuro */
+    color: #c0caf5;
+    border: 2px solid #565f89; /* Borde sutil */
+    border-radius: 50px;       /* Bordes totalmente redondos (Pastilla) */
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Ocultar input/buscador completamente */
+#input {
+    min-height: 0px;
+    height: 0px;
+    border: none;
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+/* Contenedor interno */
+#outer-box {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+/* Contenedor de scroll */
+#scroll {
+    margin: 0px;
+    padding: 0px;
+    background-color: transparent;
+}
+
+/* Cada botón (Icono) */
+#entry {
+    margin: 5px;             /* Un poco de espacio entre iconos */
+    padding: 10px 5px;       /* Relleno vertical para centrar */
+    border-radius: 100%;     /* Círculos perfectos al seleccionar */
+    background-color: transparent;
+    color: #c0caf5;
+}
+
+/* Cuando seleccionas una opción */
+#entry:selected {
+    background-color: #7aa2f7 !important; /* Azul Tokyo Night */
+    color: #1a1b26 !important; /* Icono oscuro para contraste */
+    border: none;
+}
